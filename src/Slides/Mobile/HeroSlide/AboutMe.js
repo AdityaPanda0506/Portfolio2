@@ -76,7 +76,7 @@ const AboutMe = () => {
   return (
     <Container>
       <AboutMeDescription ref={textRef}>
-        Computer Science (AIML) graduate (2027) with internship experience in NLP, time-series forecasting, and real-time fraud detection. Built production-style ML pipelines using LLMs, XGBoost, and GCP. Excited to join a collaborative team, tackle complex challenges, and deliver scalable AI/ML solutions that drive real impact.
+        I love diving into new tech and chewing on problems I haven't solved before — but I'm not all screens and code, I game just as hard as I build. Building isn't my profession, it's just my favorite way to spend time.
       </AboutMeDescription>
     </Container>
   );

@@ -27,6 +27,8 @@ const workDetails = [
     projectDesc: '',
     projectType: '',
     roles: [''],
+    githubLink: '',
+    liveLink: ''
   },
   {
     number: '01',
@@ -34,20 +36,35 @@ const workDetails = [
     projectDesc: 'End-to-end ML pipeline analyzing 3M+ news articles using FinBERT for sentiment scoring and XGBoost + LightGBM ensemble. Featuring SHAP explainability and interactive Streamlit backtesting.',
     projectType: 'ML PIPELINE',
     roles: ['ML Pipeline Engineer', 'Sentiment Analyst'],
+    githubLink: 'https://github.com/AdityaPanda0506/FinSentinel-RAG-',
+    liveLink: 'https://github.com/AdityaPanda0506/FinSentinel-RAG-'
   },
   {
     number: '02',
-    projectName: 'Real-Time Payment Fraud Detection Pipeline',
-    projectDesc: 'Real-time streaming pipeline on GCP Dataflow with rule-based fraud scoring, achieving sub-5-second alert latency. Automated IaC deployment via Terraform and CI/CD via GitHub Actions.',
-    projectType: 'STREAMING PIPELINE',
-    roles: ['Data Engineer', 'Cloud Architect'],
+    projectName: 'CloudGuard',
+    projectDesc: 'Serverless data quality platform where S3 uploads trigger AWS Lambda to score datasets in real time, automatically alerting via SNS when quality drops below threshold — cutting manual review time by 40%.',
+    projectType: 'CLOUD INFRASTRUCTURE',
+    roles: ['Cloud Engineer', 'Backend Developer'],
+    githubLink: 'https://github.com/AdityaPanda0506/aws-project',
+    liveLink: 'https://github.com/AdityaPanda0506/aws-project'
   },
   {
     number: '03',
-    projectName: 'Geometry & Distribution-Aware Learning',
+    projectName: 'DimABSA',
     projectDesc: 'Novel multilingual aspect-based sentiment architecture preserving emotional geometry in embedding space using contrastive supervision, achieving cluster-level F1 of 0.699.',
     projectType: 'DEEP LEARNING RESEARCH',
     roles: ['ML Researcher', 'PyTorch Developer'],
+    githubLink: 'https://github.com/AdityaPanda0506/DimABSA',
+    liveLink: 'https://github.com/AdityaPanda0506/DimABSA'
+  },
+  {
+    number: '04',
+    projectName: 'SDS Generator',
+    projectDesc: 'Full-stack web app that generates Safety Data Sheets from chemical names or SMILES notation, pulling live data from PubChem and ChemSpider APIs to build structured hazard and handling reports in real time.',
+    projectType: 'FULL-STACK APP',
+    roles: ['Full-Stack Developer', 'API Integration Engineer'],
+    githubLink: 'https://msds-frontend.vercel.app/',
+    liveLink: 'https://msds-frontend.vercel.app/'
   },
   {
     number: '',
@@ -55,6 +72,8 @@ const workDetails = [
     projectDesc: '',
     projectType: '',
     roles: [''],
+    githubLink: '',
+    liveLink: ''
   },
 ];
 
@@ -166,6 +185,8 @@ const Work = () => {
         projectDesc={currentProject.projectDesc || ''}
         projectType={currentProject.projectType || ''}
         roles={currentProject.roles || ['']}
+        githubLink={currentProject.githubLink || ''}
+        liveLink={currentProject.liveLink || ''}
         refreshToggle={refreshToggle} // Pass refreshToggle to trigger GSAP animations
       />
     );

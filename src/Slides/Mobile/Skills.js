@@ -57,28 +57,57 @@ const SkillsTitle = styled.div`
 `;
 
 const SkillsList = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 24px;
   font-family: 'AvenirRoman';
+  text-align: left;
   z-index: 1;
+  padding: 20px 0;
   
   @media ${device.mobileS} {
-    margin-top: 30px;
-    font-size: 20px;
+    margin-top: 15px;
+    font-size: 14px;
+    gap: 16px;
   }
   @media ${device.mobileM} {
-    margin-top: 35px;
-    font-size: 23px;
+    margin-top: 20px;
+    font-size: 16px;
+    gap: 18px;
   }
   @media ${device.mobileL} {
-    margin-top: 35px;
-    font-size: 25px;
+    margin-top: 20px;
+    font-size: 18px;
+    gap: 20px;
   }
   @media ${device.tablet} {
-    margin-top: 45px;
-    font-size: 35px;
+    margin-top: 35px;
+    font-size: 26px;
+    gap: 30px;
   }
-  @media ${device.laptop} {
-    margin-top: 60px;
-    font-size: 45px;
+`;
+
+const SkillCategory = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  border-left: 3px solid #000;
+  padding-left: 14px;
+  
+  .category-title {
+    font-family: 'AvenirHeavy';
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 6px;
+    font-size: 0.9em;
+  }
+  
+  .category-skills {
+    color: #555;
+    line-height: 1.4;
+    font-family: 'AvenirLight';
+    font-size: 0.8em;
+    letter-spacing: 1px;
   }
 `;
 
@@ -93,8 +122,8 @@ const Skills = () => {
     // Create a timeline for sequenced animations
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
     
-    // Get all skill items for staggered animation
-    const skillElements = skillsListRef.current.querySelectorAll('div');
+    // Get all skill categories for staggered animation
+    const skillElements = skillsListRef.current.querySelectorAll('.category-item');
     skillItems.current = skillElements;
     
     // Animate the title with a slide in from left
@@ -124,35 +153,26 @@ const Skills = () => {
     <Container>
       <SkillsTitle ref={titleRef}>SKILLS</SkillsTitle>
       <SkillsList ref={skillsListRef}>
-        <div>
-          <span style={{ color: '#1a73e8', fontWeight: 'bold' }}>Languages & Databases</span>
-          <br />
-          Python • SQL • Java • C++
-          <br />
-          MySQL • MongoDB
-          <br />
-          <br />
-          <span style={{ color: '#1a73e8', fontWeight: 'bold' }}>ML & Time Series</span>
-          <br />
-          XGBoost • LightGBM • Random Forest
-          <br />
-          Auto ARIMA • TBATS • Forecasting • Feature Engineering
-        </div>
-        <br />
-        <div>
-          <span style={{ color: '#1a73e8', fontWeight: 'bold' }}>Deep Learning & NLP</span>
-          <br />
-          PyTorch • TensorFlow • HuggingFace
-          <br />
-          BERT • FinBERT • LLMs • Contrastive Learning
-          <br />
-          <br />
-          <span style={{ color: '#1a73e8', fontWeight: 'bold' }}>Data, Cloud & Tools</span>
-          <br />
-          GCP (Dataflow, Pub/Sub, BigQuery)
-          <br />
-          ETL Pipelines • Terraform • GitHub Actions • Streamlit • Flask
-        </div>
+        <SkillCategory className="category-item">
+          <div className="category-title">Languages</div>
+          <div className="category-skills">PYTHON • SQL • JAVA • JAVASCRIPT</div>
+        </SkillCategory>
+        <SkillCategory className="category-item">
+          <div className="category-title">ML / AI / GenAI</div>
+          <div className="category-skills">PYTORCH • TRANSFORMERS • SHAP • RAG • VECTOR DBS • LANGCHAIN • LANGGRAPH</div>
+        </SkillCategory>
+        <SkillCategory className="category-item">
+          <div className="category-title">Data & Infra</div>
+          <div className="category-skills">PANDAS • NUMPY • GOOGLE CLOUD • AWS • APACHE BEAM • TERRAFORM • DOCKER</div>
+        </SkillCategory>
+        <SkillCategory className="category-item">
+          <div className="category-title">Backend & Web</div>
+          <div className="category-skills">FASTAPI • FLASK • REACT</div>
+        </SkillCategory>
+        <SkillCategory className="category-item">
+          <div className="category-title">Tools</div>
+          <div className="category-skills">GIT • GITHUB • POSTMAN</div>
+        </SkillCategory>
       </SkillsList>
     </Container>
   );

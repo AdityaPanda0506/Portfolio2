@@ -82,17 +82,52 @@ const getListFontSize = () => {
  * SkillsList component - List of skills displayed in two columns
  */
 const SkillsList = styled.div`
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px 80px;
   font-family: 'AvenirRoman';
   text-align: left;
   margin-left: 15%;
-  margin-right: 10%;
+  margin-right: 15%;
   z-index: 1;
-  transform: translateY(30%);
-  font-size: ${getListFontSize};
+  transform: translateY(18%);
+  
+  @media ${device.laptop} {
+    font-size: 18px;
+    gap: 30px 50px;
+  }
+  @media ${device.laptopL} {
+    font-size: 22px;
+    gap: 40px 60px;
+  }
+  @media ${device.desktop} {
+    font-size: 36px;
+    gap: 60px 90px;
+  }
+`;
+
+const SkillCategory = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  border-left: 4px solid #000;
+  padding-left: 24px;
+  
+  .category-title {
+    font-family: 'AvenirHeavy';
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    font-size: 0.95em;
+  }
+  
+  .category-skills {
+    color: #555;
+    line-height: 1.5;
+    font-family: 'AvenirLight';
+    font-size: 0.85em;
+    letter-spacing: 1.2px;
+  }
 `;
 
 /**
@@ -120,8 +155,8 @@ const Skills = () => {
     let scrollPercent = (scrollTop / (scrollHeight - clientHeight) * 100);
     
     // Calculate scroll limits for this section
-    const minLimit = (clientHeight * 530) / scrollHeight;
-    const maxLimit = (clientHeight * 760) / scrollHeight;
+    const minLimit = (clientHeight * 735) / scrollHeight;
+    const maxLimit = (clientHeight * 990) / scrollHeight;
     
     // Only apply animation within our desired scroll range
     if (scrollPercent >= minLimit && scrollPercent <= maxLimit + 3 && titleRef.current) {
@@ -156,34 +191,26 @@ const Skills = () => {
     <Container>
       <SkillsTitle ref={titleRef}>SKILLS</SkillsTitle>
       <SkillsList>
-        <div>
-          <span style={{ color: '#1a73e8', fontWeight: 'bold' }}>Languages & Databases</span>
-          <br />
-          Python • SQL • Java • C++
-          <br />
-          MySQL • MongoDB
-          <br />
-          <br />
-          <span style={{ color: '#1a73e8', fontWeight: 'bold' }}>ML & Time Series</span>
-          <br />
-          XGBoost • LightGBM • Random Forest
-          <br />
-          Auto ARIMA • TBATS • Forecasting • Feature Engineering
-        </div>
-        <div>
-          <span style={{ color: '#1a73e8', fontWeight: 'bold' }}>Deep Learning & NLP</span>
-          <br />
-          PyTorch • TensorFlow • HuggingFace
-          <br />
-          BERT • FinBERT • LLMs • Contrastive Learning
-          <br />
-          <br />
-          <span style={{ color: '#1a73e8', fontWeight: 'bold' }}>Data, Cloud & Tools</span>
-          <br />
-          GCP (Dataflow, Pub/Sub, BigQuery) • ETL Pipelines
-          <br />
-          Terraform • GitHub Actions • Streamlit • Flask
-        </div>
+        <SkillCategory>
+          <div className="category-title">Languages</div>
+          <div className="category-skills">PYTHON • SQL • JAVA • JAVASCRIPT</div>
+        </SkillCategory>
+        <SkillCategory>
+          <div className="category-title">ML / AI / GenAI</div>
+          <div className="category-skills">PYTORCH • TRANSFORMERS • SHAP • RAG • VECTOR DBS • LANGCHAIN • LANGGRAPH</div>
+        </SkillCategory>
+        <SkillCategory>
+          <div className="category-title">Data & Infra</div>
+          <div className="category-skills">PANDAS • NUMPY • GOOGLE CLOUD • AWS • APACHE BEAM • TERRAFORM • DOCKER</div>
+        </SkillCategory>
+        <SkillCategory>
+          <div className="category-title">Backend & Web</div>
+          <div className="category-skills">FASTAPI • FLASK • REACT</div>
+        </SkillCategory>
+        <SkillCategory style={{ gridColumn: 'span 2' }}>
+          <div className="category-title">Tools</div>
+          <div className="category-skills">GIT • GITHUB • POSTMAN</div>
+        </SkillCategory>
       </SkillsList>
     </Container>
   );

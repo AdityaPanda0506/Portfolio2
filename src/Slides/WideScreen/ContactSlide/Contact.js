@@ -63,7 +63,7 @@ const ContactTitle = styled.div`
   position: absolute;
   color: #EEE;
   top: 12%;
-  left: -70%;
+  left: -30%;
   font-size: ${getTitleFontSize};
   /* GSAP will handle the transform instead of CSS */
 `;
@@ -90,7 +90,7 @@ const Contact = () => {
    * Scroll multiplier - controls how fast the title moves relative to scroll
    * Higher value = faster movement
    */
-  const SCROLL_MULTIPLIER = 8;
+  const SCROLL_MULTIPLIER = 3.2;
   
   /**
    * Handle scroll event - animates the title based on scroll position
@@ -104,7 +104,7 @@ const Contact = () => {
     let scrollPercent = (scrollTop / (scrollHeight - clientHeight) * 100);
     
     // Calculate minimum scroll limit for this section
-    const minLimit = (clientHeight * 620) / scrollHeight;
+    const minLimit = (clientHeight * 835) / scrollHeight;
     
     // Only apply animation within our desired scroll range
     if (scrollPercent >= minLimit && scrollPercent <= 100 && titleRef.current) {
@@ -139,12 +139,10 @@ const Contact = () => {
     <Container>
       <ContactTitle ref={titleRef}>CONTACT</ContactTitle>
       <SocialMediaIcons>
-        <SocialLogo imgURL={twitterImg} alternate="Twitter" redirectURL="#" />
-        <SocialLogo imgURL={githubImg} alternate="Github" redirectURL="#" />
-        <SocialLogo imgURL={mailImg} alternate="Mail" redirectURL="#" />
-        <SocialLogo imgURL={instaImg} alternate="Instagram" redirectURL="#" />
-        <SocialLogo imgURL={dribbbleImg} alternate="Dribbble" redirectURL="#" />
-        <SocialLogo imgURL={linkedInImg} alternate="Linkedin" redirectURL="#" />
+        <SocialLogo imgURL={githubImg} alternate="Github" redirectURL="https://github.com/AdityaPanda0506" />
+        <SocialLogo imgURL={mailImg} alternate="Mail" redirectURL="mailto:aditya.panda.cs@gmail.com" />
+        <SocialLogo imgURL={instaImg} alternate="Instagram" redirectURL="https://instagram.com/aditya" />
+        <SocialLogo imgURL={linkedInImg} alternate="Linkedin" redirectURL="https://linkedin.com/in/aditya" />
       </SocialMediaIcons>
     </Container>
   );

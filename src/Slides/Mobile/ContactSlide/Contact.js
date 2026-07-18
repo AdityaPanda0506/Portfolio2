@@ -70,7 +70,7 @@ const SocialMediaIcons = styled.div`
   /* border: 1px solid black; */
   z-index: 1;
   display: grid;
-  grid-template: 80px 80px 80px / 1fr 1fr;
+  grid-template: repeat(2, 80px) / 1fr 1fr;
   @media ${device.mobileS} {
     margin-top: 60px;
     grid-gap: 40px;
@@ -135,12 +135,10 @@ const Contact = () => {
     <Container>
       <ContactTitle ref={titleRef}>CONTACT</ContactTitle>
       <SocialMediaIcons ref={iconsContainerRef}>
-        <SocialLogo imgURL={twitterImg} alternate="twitter" redirectURL="#" />
-        <SocialLogo imgURL={githubImg} alternate="github" redirectURL="#" />
-        <SocialLogo imgURL={mailImg} alternate="mail" redirectURL="#" />
-        <SocialLogo imgURL={instaImg} alternate="instagram" redirectURL="#" />
-        <SocialLogo imgURL={dribbbleImg} alternate="dribbble" redirectURL="#" />
-        <SocialLogo imgURL={linkedInImg} alternate="linkedin" redirectURL="#" />
+        <SocialLogo imgURL={githubImg} alternate="github" redirectURL="https://github.com/AdityaPanda0506" />
+        <SocialLogo imgURL={mailImg} alternate="mail" redirectURL="mailto:aditya.panda.cs@gmail.com" />
+        <SocialLogo imgURL={instaImg} alternate="instagram" redirectURL="https://instagram.com/aditya" />
+        <SocialLogo imgURL={linkedInImg} alternate="linkedin" redirectURL="https://linkedin.com/in/aditya" />
       </SocialMediaIcons>
     </Container>
   );

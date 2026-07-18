@@ -2,14 +2,15 @@ import React, { useState, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import FinSentinelImages from './ParallaxImages/FinSentinelImages';
-import FraudDetectionImages from './ParallaxImages/FraudDetectionImages';
+import CloudGuardImages from './ParallaxImages/CloudGuardImages';
 import MultilingualSentimentImages from './ParallaxImages/MultilingualSentimentImages';
+import ChemicalSDSImages from './ParallaxImages/ChemicalSDSImages';
 
 const ImageContainer = styled.div`
   /** border: 10px dashed black; */
   margin-left: 50%;
   width: 50%;
-  height: 505vh;
+  height: 645vh;
   display: flex;
   flex-flow: column nowrap;
 `;
@@ -40,7 +41,7 @@ const ImageContent = ({ pageSplitTimes }) => {
     
     // Define valid scroll range for this component
     const minScrollLimit = (documentElement.clientHeight * 100) / documentElement.scrollHeight;
-    const maxScrollLimit = (documentElement.clientHeight * 630) / documentElement.scrollHeight;
+    const maxScrollLimit = (documentElement.clientHeight * 770) / documentElement.scrollHeight;
     
     // Only update state if scroll percentage is within our range of interest
     if (currentScrollPercent >= minScrollLimit && currentScrollPercent <= maxScrollLimit) {
@@ -72,8 +73,9 @@ const ImageContent = ({ pageSplitTimes }) => {
   // Project image components in order
   const projectImages = [
     { Component: FinSentinelImages, index: 1 },
-    { Component: FraudDetectionImages, index: 2 },
-    { Component: MultilingualSentimentImages, index: 3 }
+    { Component: CloudGuardImages, index: 2 },
+    { Component: MultilingualSentimentImages, index: 3 },
+    { Component: ChemicalSDSImages, index: 4 }
   ];
   
   return (

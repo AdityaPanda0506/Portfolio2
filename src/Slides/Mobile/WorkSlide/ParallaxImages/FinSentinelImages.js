@@ -25,7 +25,7 @@ const Card = styled.div`
   h4 {
     margin: 0 0 4px 0;
     font-family: 'AvenirHeavy';
-    color: #1a73e8;
+    color: #000;
     font-size: 11px;
   }
   
@@ -37,7 +37,7 @@ const Card = styled.div`
   
   .star {
     font-size: 16px;
-    color: #fbbc05;
+    color: #000;
     margin-bottom: 2px;
   }
 `;
@@ -49,7 +49,7 @@ const Layer1 = styled(Card).attrs(({ $scroll }) => ({
 }))`
   transition: transform 0.2s ease-out;
   position: absolute;
-  bottom: -170vh;
+  bottom: -120vh;
   transform-origin: left center;
   left: 2vw;
   z-index: 4;
@@ -62,7 +62,7 @@ const Layer2 = styled(Card).attrs(({ $scroll }) => ({
 }))`
   transition: transform 0.2s ease-out;
   position: absolute;
-  bottom: -125vh;
+  bottom: -90vh;
   right: 2vw;
   transform-origin: right center;
   filter: blur(0.6px);
@@ -75,7 +75,7 @@ const Layer3 = styled(Card).attrs(({ $scroll }) => ({
   },
 }))`
   transition: transform 0.2s ease-out;
-  bottom: -110vh;
+  bottom: -75vh;
   left: 10vw;
   transform-origin: left center;
   position: absolute;
@@ -89,7 +89,7 @@ const Layer4 = styled(Card).attrs(({ $scroll }) => ({
   },
 }))`
   transition: transform 0.2s ease-out;
-  bottom: -105vh;
+  bottom: -70vh;
   right: 10vw;
   transform-origin: right center;
   position: absolute;

@@ -3,13 +3,14 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import vhCheck from 'vh-check';
 import FinSentinelImages from './ParallaxImages/FinSentinelImages';
-import FraudDetectionImages from './ParallaxImages/FraudDetectionImages';
+import CloudGuardImages from './ParallaxImages/CloudGuardImages';
 import MultilingualSentimentImages from './ParallaxImages/MultilingualSentimentImages';
+import ChemicalSDSImages from './ParallaxImages/ChemicalSDSImages';
 
 const ImageContainer = styled.div`
 /* border: 0.1px dashed black; */
 width:100%;
-height:510vh;
+height:640vh;
 margin-bottom:30vh;
 display: flex;
 flex-flow: column nowrap;
@@ -38,7 +39,7 @@ const ImageContent = ({ pageSplitTimes }) => {
     
     // Define scroll boundaries for animation
     const minScrollLimit = (documentElement.clientHeight * 100) / documentElement.scrollHeight;
-    const maxScrollLimit = (documentElement.clientHeight * 650) / documentElement.scrollHeight;
+    const maxScrollLimit = (documentElement.clientHeight * 780) / documentElement.scrollHeight;
     
     // Only update state if scroll percentage is within limits
     if (scrollPercentage >= minScrollLimit && scrollPercentage <= maxScrollLimit) {
@@ -78,7 +79,7 @@ const ImageContent = ({ pageSplitTimes }) => {
           />
         </ImageBox>
         <ImageBox height={boxHeight}>
-          <FraudDetectionImages
+          <CloudGuardImages
             boxHeight={boxHeight}
             index={2}
             scrollPercent={scrollPercent}
@@ -90,6 +91,15 @@ const ImageContent = ({ pageSplitTimes }) => {
           <MultilingualSentimentImages
             boxHeight={boxHeight}
             index={3}
+            scrollPercent={scrollPercent}
+            screenHeight={screenHeight}
+            scrollHeight={scrollHeight}
+          />
+        </ImageBox>
+        <ImageBox height={boxHeight}>
+          <ChemicalSDSImages
+            boxHeight={boxHeight}
+            index={4}
             scrollPercent={scrollPercent}
             screenHeight={screenHeight}
             scrollHeight={scrollHeight}
